@@ -38,7 +38,13 @@ p{
     font-weight: 300;
 }
 
-nav h3{\r\ndisplay:flex;\r\nalign-items:center;\r\ngap:25px;\r\n}\r\n\r\nnav a{
+nav h3{
+display:flex;
+align-items:center;
+gap:25px;
+}
+
+nav a{
 margin:0;
 text-decoration: none;
 color:white;
@@ -114,7 +120,7 @@ border:2px solid #38bdf8;
 .hero-image{
 width:420px;
 height:420px;
-padding: auto;
+padding:0;
 }
 
 .hero-image img{
@@ -160,3 +166,4 @@ text-decoration:none;
 .admin-link:hover{
 text-decoration:underline;
 }
+
