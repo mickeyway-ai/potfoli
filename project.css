@@ -1,19 +1,10 @@
 /* Projects */
 
-.logo img{
-    width:7%;
-    height: 8%;
-    border-radius: 50%;
-    
-
-}
-
-
 .project-container{
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:30px;
-max-width: 250%;
+max-width: 1200px;
 margin: 0 auto;
 }
 
@@ -30,8 +21,8 @@ box-shadow:0 20px 40px rgba(0,0,0,.5);
 }
 
 .card img{
-width: 100%;
-height: 70%;
+display:block;\r\nwidth:100%;
+aspect-ratio:16 / 9;
 object-fit:cover;
 transition:.5s;
 }
@@ -62,3 +53,4 @@ text-decoration:none;
 color:white;
 }
 
+\r\n@media(max-width:700px){\r\n.project-container{grid-template-columns:1fr;gap:20px;}\r\n.card{border-radius:24px;}\r\n}\r\n
