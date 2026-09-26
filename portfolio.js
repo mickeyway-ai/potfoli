@@ -77,13 +77,40 @@ async function renderSkills() {
 
     try {
         const skills = await loadPortfolioData("data/skills.json");
+        const skillIcon = (name = "") => {
+            const value = name.toLowerCase();
+            if (value.includes("html")) return "fa-brands fa-html5";
+            if (value.includes("css")) return "fa-brands fa-css3-alt";
+            if (value.includes("network") || value.includes("cisco")) return "fa-solid fa-network-wired";
+            if (value.includes("packet")) return "fa-solid fa-diagram-project";
+            if (value.includes("design")) return "fa-solid fa-pen-ruler";
+            return "fa-solid fa-lightbulb";
+        };
+
         const items = skills.map((skill) => {
             const row = document.createElement("div");
             row.className = "skill";
 
+            const topline = document.createElement("div");
+            topline.className = "skill-topline";
+
+            const icon = document.createElement("span");
+            icon.className = "skill-icon";
+            icon.setAttribute("aria-hidden", "true");
+            const iconGlyph = document.createElement("i");
+            iconGlyph.className = skillIcon(skill.name);
+            icon.append(iconGlyph);
+
             const name = document.createElement("span");
+            name.className = "skill-name";
             name.textContent = skill.name || "Skill";
-            row.append(name);
+
+            const level = Math.max(0, Math.min(100, Number(skill.level) || 0));
+            const levelLabel = document.createElement("span");
+            levelLabel.className = "skill-level-label";
+            levelLabel.textContent = `${level}%`;
+            topline.append(icon, name, levelLabel);
+            row.append(topline);
 
             const bar = document.createElement("div");
             bar.className = "bar";
@@ -92,13 +119,11 @@ async function renderSkills() {
             bar.setAttribute("aria-valuemin", "0");
             bar.setAttribute("aria-valuemax", "100");
 
-            const level = Math.max(0, Math.min(100, Number(skill.level) || 0));
             bar.setAttribute("aria-valuenow", String(level));
 
             const fill = document.createElement("div");
             fill.className = "fill";
-            fill.style.width = `${level}%`;
-            fill.textContent = `${level}%`;
+            fill.style.setProperty("--skill-level", `${level}%`);
             bar.append(fill);
             row.append(bar);
 
