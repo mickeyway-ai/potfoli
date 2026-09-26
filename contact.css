@@ -24,15 +24,37 @@ font-size: 25px;
 margin:20px 0;
 }
 
+.contact-name{
+margin-bottom:24px;
+color:#38bdf8;
+font-size:24px;
+}
+
+.contact-box a{
+color:#7dd3fc;
+text-decoration:none;
+}
+
+.contact-box a:hover{
+text-decoration:underline;
+}
+
 .social{
 margin-top:25px;
 }
 
- .social a{display:inline-flex;align-items:center;justify-content:center;color:white;}\r\n\r\n.social i{
+.social i{
 font-size:28px;
 margin:15px;
 cursor:pointer;
 transition:.4s;
+}
+
+.social a{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+color:white;
 }
 
 .social i:hover{
@@ -81,7 +103,12 @@ gap:15px;
 }
 
 nav a{
-margin:0 10px;
+font-size:17px;
+}
+
+nav h3{
+gap:12px;
 }
 
 }
+
