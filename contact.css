@@ -28,7 +28,7 @@ margin:20px 0;
 margin-top:25px;
 }
 
-.social i{
+ .social a{display:inline-flex;align-items:center;justify-content:center;color:white;}\r\n\r\n.social i{
 font-size:28px;
 margin:15px;
 cursor:pointer;
