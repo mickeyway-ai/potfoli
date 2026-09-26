@@ -21,7 +21,8 @@ box-shadow:0 20px 40px rgba(0,0,0,.5);
 }
 
 .card img{
-display:block;\r\nwidth:100%;
+display:block;
+width:100%;
 aspect-ratio:16 / 9;
 object-fit:cover;
 transition:.5s;
@@ -53,4 +54,15 @@ text-decoration:none;
 color:white;
 }
 
-\r\n@media(max-width:700px){\r\n.project-container{grid-template-columns:1fr;gap:20px;}\r\n.card{border-radius:24px;}\r\n}\r\n
+@media(max-width:700px){
+.project-container{
+grid-template-columns:1fr;
+gap:20px;
+}
+
+.card{
+border-radius:24px;
+}
+}
+
+
