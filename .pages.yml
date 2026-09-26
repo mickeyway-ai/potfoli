@@ -43,6 +43,19 @@ content:
         type: number
         required: true
 
+  - name: site-settings
+    label: Site settings
+    type: file
+    path: data/site.json
+    format: json
+    fields:
+      - name: cvFile
+        label: CV or resume (PDF)
+        type: file
+        options:
+          categories: [document]
+          extensions: [pdf]
+
   - name: home-page
     label: Home page (HTML)
     type: file
