@@ -35,11 +35,11 @@ text-align: left;
 
 p{
     font-size: 20px;
-    font-weight: 200px;
+    font-weight: 300;
 }
 
-nav a{
-margin: left 25px;
+nav h3{\r\ndisplay:flex;\r\nalign-items:center;\r\ngap:25px;\r\n}\r\n\r\nnav a{
+margin:0;
 text-decoration: none;
 color:white;
 transition:.4s;
