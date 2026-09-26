@@ -111,5 +111,27 @@ async function renderSkills() {
     }
 }
 
+async function renderCvDownload() {
+    const link = document.querySelector("#cv-download-link");
+    if (!link) return;
+
+    try {
+        const settings = await loadPortfolioData("data/site.json");
+        if (!settings.cvFile) return;
+
+        const cvUrl = new URL(settings.cvFile, window.location.href);
+        if (cvUrl.origin !== window.location.origin || !cvUrl.pathname.toLowerCase().endsWith(".pdf")) {
+            return;
+        }
+
+        link.href = cvUrl.href;
+        link.hidden = false;
+    } catch {
+        link.hidden = true;
+    }
+}
+
 renderProjects();
 renderSkills();
+renderCvDownload();
+
