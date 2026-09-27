@@ -68,6 +68,12 @@ content:
     path: skill.html
     format: code
 
+  - name: about-page
+    label: About page (HTML)
+    type: file
+    path: about.html
+    format: code
+
   - name: projects-page
     label: Projects page (HTML)
     type: file
@@ -110,6 +116,12 @@ content:
     path: skill.css
     format: code
 
+  - name: about-styles
+    label: About page styles (CSS)
+    type: file
+    path: about.css
+    format: code
+
   - name: projects-styles
     label: Projects styles (CSS)
     type: file
@@ -127,3 +139,4 @@ content:
     type: file
     path: portfolio.js
     format: code
+
