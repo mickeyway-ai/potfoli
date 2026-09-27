@@ -252,14 +252,40 @@ async function renderCvDownload() {
             return;
         }
 
-        link.href = cvUrl.href;
+        link.href = "cv.html";
         link.hidden = false;
     } catch {
         link.hidden = true;
     }
 }
 
+async function renderCvPreview() {
+    const preview = document.querySelector("#cv-preview");
+    const download = document.querySelector("#cv-file-download");
+    const message = document.querySelector("#cv-message");
+    if (!preview || !download || !message) return;
+
+    try {
+        const settings = await loadPortfolioData("data/site.json");
+        if (!settings.cvFile) throw new Error("No CV has been uploaded yet.");
+
+        const cvUrl = new URL(settings.cvFile, window.location.href);
+        if (cvUrl.origin !== window.location.origin || !cvUrl.pathname.toLowerCase().endsWith(".pdf")) {
+            throw new Error("The CV file must be a PDF from this portfolio.");
+        }
+
+        preview.src = cvUrl.href;
+        preview.hidden = false;
+        download.href = cvUrl.href;
+        download.hidden = false;
+        message.hidden = true;
+    } catch {
+        message.textContent = "No CV is available yet. Please check back later.";
+    }
+}
+
 renderProjects();
 renderSkills();
 renderCvDownload();
+renderCvPreview();
 
