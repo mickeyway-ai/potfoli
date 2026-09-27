@@ -167,3 +167,39 @@ text-decoration:none;
 text-decoration:underline;
 }
 
+@media(max-width:900px){
+.hero{
+min-height:100svh;
+gap:28px;
+padding:155px 7% 56px;
+}
+
+.hero-text{
+padding-top:0;
+margin-top:0;
+}
+
+.hero h1{
+font-size:clamp(34px, 8vw, 48px);
+}
+
+.hero-image{
+width:min(70vw, 300px);
+height:auto;
+aspect-ratio:1;
+}
+
+.hero-image img{
+height:100%;
+object-fit:cover;
+}
+}
+
+@media(max-width:480px){
+.hero{padding-right:6%;padding-left:6%;}
+.hero h2{font-size:21px;}
+.hero p{font-size:17px;}
+.buttons{flex-wrap:wrap;}
+.btn{padding:12px 22px;}
+}
+
