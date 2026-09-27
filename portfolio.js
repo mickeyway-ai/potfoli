@@ -1,5 +1,5 @@
 async function loadPortfolioData(path) {
-    const response = await fetch(path);
+    const response = await fetch(path, { cache: "no-cache" });
     if (!response.ok) {
         throw new Error(`Could not load ${path}`);
     }
@@ -83,6 +83,7 @@ async function renderSkills() {
             if (value.includes("css")) return "fa-brands fa-css3-alt";
             if (value.includes("network") || value.includes("cisco")) return "fa-solid fa-network-wired";
             if (value.includes("packet")) return "fa-solid fa-diagram-project";
+            if (value.includes("software") || value.includes("program")) return "fa-solid fa-code";
             if (value.includes("design")) return "fa-solid fa-pen-ruler";
             return "fa-solid fa-lightbulb";
         };
