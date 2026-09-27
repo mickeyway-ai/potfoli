@@ -1,0 +1,87 @@
+
+/* Contact */
+.logo img{
+    width:7%;
+    height:8%;
+    border-radius: 50%;
+
+}
+
+
+.contact-box{
+/*max-width:500px;*/
+height: auto;
+margin:auto;
+text-align:center;
+background:#1e293b;
+padding:40px;
+border-radius:20px;
+font-weight: bold;
+font-size: 25px;
+}
+
+.contact-box p{
+margin:20px 0;
+}
+
+.social{
+margin-top:25px;
+}
+
+.social i{
+font-size:28px;
+margin:15px;
+cursor:pointer;
+transition:.4s;
+}
+
+.social i:hover{
+color:#38bdf8;
+transform:scale(1.3);
+}
+
+/* Footer */
+
+footer{
+padding:30px;
+text-align:center;
+background:#020617;
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+.hero{
+flex-direction:column-reverse;
+text-align:center;
+}
+
+.hero-text{
+width:100%;
+margin-top:40px;
+}
+
+.hero h1{
+font-size:45px;
+}
+
+.hero-image{
+width:300px;
+height:300px;
+}
+
+.buttons{
+justify-content:center;
+}
+
+header{
+flex-direction:column;
+gap:15px;
+}
+
+nav a{
+margin:0 10px;
+}
+
+}

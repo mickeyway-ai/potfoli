@@ -1,0 +1,40 @@
+/* Skills */
+
+.skill{
+margin-bottom:25px;
+font-size: 30px;
+font-weight: 400;
+}
+
+.bar{
+height:20px;
+background:#1e293b;
+border-radius:20px;
+overflow:hidden;
+margin-top:8px;
+}
+
+.fill{
+height:100%;
+background:linear-gradient(90deg,#3b82f6,#38bdf8);
+display:flex;
+justify-content:flex-end;
+align-items:center;
+padding-right:10px;
+font-size:15px;
+animation:grow 2s;
+}
+
+.html{width:100%;}
+.css{width:100%;}
+.network{width:100%;}
+.packet{width:100%;}
+.ui{width:100%;}
+.Graphic{width:100%;}
+
+
+@keyframes grow{
+from{
+width:0;
+}
+}

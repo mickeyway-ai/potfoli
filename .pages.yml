@@ -1,0 +1,116 @@
+media:
+  input: images/uploads
+  output: images/uploads
+
+content:
+  - name: projects
+    label: Portfolio projects
+    type: file
+    path: data/projects.json
+    format: json
+    list: true
+    fields:
+      - name: title
+        label: Project title
+        type: string
+        required: true
+      - name: description
+        type: text
+        required: true
+      - name: image
+        label: Project image
+        type: image
+      - name: imageAlt
+        label: Image description
+        type: string
+      - name: link
+        label: Project link (optional)
+        type: string
+
+  - name: skills
+    label: Portfolio skills
+    type: file
+    path: data/skills.json
+    format: json
+    list: true
+    fields:
+      - name: name
+        label: Skill name
+        type: string
+        required: true
+      - name: level
+        label: Skill level (0 to 100)
+        type: number
+        required: true
+
+  - name: home-page
+    label: Home page (HTML)
+    type: file
+    path: index.html
+    format: code
+
+  - name: skills-page
+    label: Skills page (HTML)
+    type: file
+    path: skill.html
+    format: code
+
+  - name: projects-page
+    label: Projects page (HTML)
+    type: file
+    path: project.html
+    format: code
+
+  - name: contact-page
+    label: Contact page (HTML)
+    type: file
+    path: contact.html
+    format: code
+
+  - name: hire-page
+    label: Hire page (HTML)
+    type: file
+    path: hirde.html
+    format: code
+
+  - name: thank-you-page
+    label: Thank-you page (HTML)
+    type: file
+    path: thankYou.html
+    format: code
+
+  - name: main-styles
+    label: Main styles (CSS)
+    type: file
+    path: style.css
+    format: code
+
+  - name: contact-styles
+    label: Contact styles (CSS)
+    type: file
+    path: contact.css
+    format: code
+
+  - name: skills-styles
+    label: Skills styles (CSS)
+    type: file
+    path: skill.css
+    format: code
+
+  - name: projects-styles
+    label: Projects styles (CSS)
+    type: file
+    path: project.css
+    format: code
+
+  - name: hire-styles
+    label: Hire styles (CSS)
+    type: file
+    path: hirde.css
+    format: code
+
+  - name: portfolio-renderer
+    label: Portfolio data renderer (JavaScript)
+    type: file
+    path: portfolio.js
+    format: code

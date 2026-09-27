@@ -1,0 +1,15 @@
+
+button{
+padding:14px 30px;
+background:#3b82f6;
+border-radius:30px;
+text-decoration:none;
+color:white;
+transition:.4s;
+}
+
+
+button:hover {
+  background: #357ABD;
+  transform: translateY(-2px);
+}

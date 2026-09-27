@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Smart Farming IoT",
+    "description": "IoT monitoring system using Cisco Packet Tracer.",
+    "image": "images/project1.jpg",
+    "imageAlt": "Smart farming IoT project",
+    "link": ""
+  },
+  {
+    "title": "Champagne Jewelry",
+    "description": "Responsive E-commerce Website using HTML & CSS.",
+    "image": "images/project2.jpg",
+    "imageAlt": "Champagne Jewelry website",
+    "link": ""
+  },
+  {
+    "title": "Campus Network",
+    "description": "University VLAN Network Design.",
+    "image": "images/project3.jpg",
+    "imageAlt": "Campus network design",
+    "link": ""
+  },
+  {
+    "title": "Hospital VLAN Network",
+    "description": "Hospital VLAN Network Design.",
+    "image": "images/project3.jpg",
+    "imageAlt": "Hospital network design",
+    "link": ""
+  }
+]
