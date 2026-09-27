@@ -3,23 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View or download Michael Teye Nanor's CV.">
     <title>CV | Michael Nanor</title>
-
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contact.css">
     <link rel="stylesheet" href="cv.css">
-
 </head>
 <body>
-
-
-    
-<p><h1> No CV Or resume avilable....!</h1></p>
-
-
-
-
-
-
-<button onclick="window.location.href='index.html';" >Back to Home</button>  
-    
+    <header>
+        <div class="logo"><img src="images/logo.jpg" alt="MikeyTech Solutions logo"><p>MikeyTech solutions</p></div>
+        <nav aria-label="Main navigation"><h3>
+            <a href="index.html">Home</a><a href="about.html">About</a><a href="skill.html">Skills</a><a href="project.html">Projects</a><a href="contact.html">Contact</a>
+        </h3></nav>
+    </header>
+    <main class="cv-page">
+        <div class="cv-heading">
+            <div><p class="cv-eyebrow">CURRICULUM VITAE</p><h1>Michael Teye Nanor</h1></div>
+            <a class="cv-download" id="cv-file-download" href="#" hidden>Download PDF</a>
+        </div>
+        <p id="cv-message" class="cv-message" role="status">Loading CV...</p>
+        <iframe id="cv-preview" title="Michael Teye Nanor CV preview" hidden></iframe>
+        <a class="cv-back" href="index.html">Back to portfolio</a>
+    </main>
+    <script src="portfolio.js" defer></script>
 </body>
 </html>
