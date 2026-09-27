@@ -99,16 +99,81 @@ justify-content:center;
 
 header{
 flex-direction:column;
-gap:15px;
+gap:10px;
+padding:12px 5%;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo img{
+width:44px;
+height:44px;
 }
 
 nav a{
-font-size:17px;
+font-size:clamp(14px, 3.5vw, 17px);
 }
 
 nav h3{
-gap:12px;
+justify-content:center;
+flex-wrap:wrap;
+gap:8px 16px;
+margin:0;
 }
 
+}
+
+@media(max-width:600px){
+.contact-box{
+max-width:100%;
+padding:24px 16px;
+border-radius:16px;
+font-size:16px;
+overflow-wrap:anywhere;
+}
+
+.contact-box p{
+font-size:16px;
+}
+
+.contact-name{
+font-size:21px;
+}
+
+#contact{
+padding:175px 6% 50px;
+}
+
+footer{
+padding:24px 12px;
+}
+}
+
+.thank-you{
+max-width:760px;
+min-height:55vh;
+margin:0 auto;
+padding:180px 8% 56px;
+text-align:center;
+}
+
+.thank-you h1{
+margin-bottom:16px;
+color:#38bdf8;
+font-size:clamp(30px, 7vw, 44px);
+}
+
+.thank-you p{
+margin-bottom:28px;
+color:#cbd5e1;
+line-height:1.7;
+}
+
+.thank-you .btn{
+display:inline-block;
 }
 
