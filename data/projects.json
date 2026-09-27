@@ -1,30 +1,59 @@
 [
   {
-    "title": "Smart Farming IoT",
-    "description": "IoT monitoring system using Cisco Packet Tracer.",
+    "title": "Smart Farming Monitoring System",
+    "problem": "Farmers need a way to monitor environmental conditions and control irrigation efficiently.",
+    "solution": "Designed and simulated an IoT-based smart farming monitoring system using Cisco Packet Tracer.",
+    "technologies": "Cisco Packet Tracer\nIoT sensors\nWater level monitoring\nTemperature and humidity monitoring\nAutomated irrigation\nNetwork connectivity",
+    "implemented": "Water level sensors\nTemperature and humidity monitoring\nIrrigation endpoints\nIoT gateway and server\nMonitoring and control simulation",
+    "role": "Network design, IoT configuration, and system simulation.",
     "image": "images/project1.jpg",
-    "imageAlt": "Smart farming IoT project",
-    "link": ""
+    "imageAlt": "Cisco Packet Tracer smart farming simulation with two sensor-equipped farms",
+    "diagram": "images/project1.jpg",
+    "demo": "",
+    "github": "",
+    "packetTracerFile": ""
   },
   {
-    "title": "Champagne Jewelry",
-    "description": "Responsive E-commerce Website using HTML & CSS.",
+    "title": "Champagne Jewelry E-commerce Website",
+    "problem": "A jewelry store needs a clear online catalog where customers can browse products on different screen sizes.",
+    "solution": "Built a responsive storefront prototype with HTML and CSS to present jewelry collections and shopping actions.",
+    "technologies": "HTML\nCSS\nResponsive web design",
+    "implemented": "Jewelry collection layout\nProduct cards and pricing\nStore navigation\nResponsive page structure",
+    "role": "Frontend layout and visual design.",
     "image": "images/project2.jpg",
-    "imageAlt": "Champagne Jewelry website",
-    "link": ""
+    "imageAlt": "Screenshot of the Champagne Jewelry online storefront",
+    "diagram": "",
+    "demo": "",
+    "github": "",
+    "packetTracerFile": ""
   },
   {
-    "title": "Campus Network",
-    "description": "University VLAN Network Design.",
+    "title": "University Campus Network Infrastructure",
+    "problem": "A university campus needs a segmented network to organize departments and support controlled communication between them.",
+    "solution": "Designed a campus area network simulation with department networks connected through shared switching and routing infrastructure.",
+    "technologies": "Cisco Packet Tracer\nVLANs\nInter-VLAN routing\nCisco switches and routers\nDHCP\nIP addressing\nACLs",
+    "implemented": "Administration network\nFaculty network\nLibrary network\nICT laboratory network\nServer and wireless access point\nInter-VLAN communication\nIP addressing plan",
+    "role": "Network design and Packet Tracer simulation.",
     "image": "images/project3.jpg",
-    "imageAlt": "Campus network design",
-    "link": ""
+    "imageAlt": "University campus area network topology with administration, faculty, library, and ICT laboratory areas",
+    "diagram": "images/project3.jpg",
+    "demo": "",
+    "github": "",
+    "packetTracerFile": ""
   },
   {
-    "title": "Hospital VLAN Network",
-    "description": "Hospital VLAN Network Design.",
-    "image": "images/project3.jpg",
-    "imageAlt": "Hospital network design",
-    "link": ""
+    "title": "Hospital Network with VLAN Segmentation",
+    "problem": "A hospital network needs to organize traffic for different departments and keep its network layout manageable.",
+    "solution": "Designed a hospital network topology in Cisco Packet Tracer with department networks connected through a central router.",
+    "technologies": "Cisco Packet Tracer\nVLANs\nRouters and switches\nIP addressing\nDepartment network segmentation",
+    "implemented": "HR office network\nLaboratory network\nPharmacy network\nDoctors network\nCentral server connectivity\nDepartment IP ranges",
+    "role": "Network topology design and Packet Tracer simulation.",
+    "image": "images/Capture.PNG",
+    "imageAlt": "Hospital network topology showing separate HR, laboratory, pharmacy, and doctors areas connected to a central router",
+    "diagram": "images/Capture.PNG",
+    "demo": "",
+    "github": "",
+    "packetTracerFile": ""
   }
 ]
+
