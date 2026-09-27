@@ -14,18 +14,44 @@ content:
         label: Project title
         type: string
         required: true
-      - name: description
+      - name: problem
+        label: Problem
         type: text
         required: true
+      - name: solution
+        label: Solution
+        type: text
+        required: true
+      - name: technologies
+        label: Technologies (one per line)
+        type: text
+      - name: implemented
+        label: What I implemented (one per line)
+        type: text
+      - name: role
+        label: My role
+        type: text
       - name: image
         label: Project image
         type: image
       - name: imageAlt
         label: Image description
         type: string
-      - name: link
-        label: Project link (optional)
+      - name: demo
+        label: Demo link (optional)
         type: string
+      - name: github
+        label: GitHub repository link (optional)
+        type: string
+      - name: diagram
+        label: Network diagram or evidence image (optional)
+        type: image
+      - name: packetTracerFile
+        label: Packet Tracer file (optional)
+        type: file
+        options:
+          categories: [document]
+          extensions: [pkt]
 
   - name: skills
     label: Portfolio skills
