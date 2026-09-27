@@ -1,11 +1,37 @@
 [
-  { "name": "HTML", "level": 95 },
-  { "name": "CSS", "level": 90 },
-  { "name": "Cisco Networking", "level": 92 },
-  { "name": "Packet Tracer", "level": 95 },
-  { "name": "UI Design", "level": 85 },
-  { "name": "Graphic Designer", "level": 99 },
-  { "name": "Software developer", "level": 100 },
-  { "name": "Web Designer", "level": 100 }
+  { "category": "Web Development", "name": "HTML5" },
+  { "category": "Web Development", "name": "CSS3" },
+  { "category": "Web Development", "name": "JavaScript" },
+  { "category": "Web Development", "name": "Responsive Design" },
+
+  { "category": "Networking", "name": "Cisco Packet Tracer" },
+  { "category": "Networking", "name": "VLANs" },
+  { "category": "Networking", "name": "IP Addressing" },
+  { "category": "Networking", "name": "Routing & Switching" },
+  { "category": "Networking", "name": "DHCP" },
+  { "category": "Networking", "name": "ACLs" },
+  { "category": "Networking", "name": "Network Troubleshooting" },
+
+  { "category": "Cybersecurity", "name": "Network Security" },
+  { "category": "Cybersecurity", "name": "Firewall Concepts" },
+  { "category": "Cybersecurity", "name": "ACLs" },
+  { "category": "Cybersecurity", "name": "Authentication" },
+  { "category": "Cybersecurity", "name": "Access Control" },
+  { "category": "Cybersecurity", "name": "Vulnerability Awareness" },
+  { "category": "Cybersecurity", "name": "Incident Response Fundamentals" },
+
+  { "category": "IoT", "name": "Cisco Packet Tracer IoT" },
+  { "category": "IoT", "name": "Sensors" },
+  { "category": "IoT", "name": "Automation" },
+  { "category": "IoT", "name": "Smart Farming" },
+
+  { "category": "Tools", "name": "Git" },
+  { "category": "Tools", "name": "GitHub" },
+  { "category": "Tools", "name": "VS Code" },
+  { "category": "Tools", "name": "Cisco Packet Tracer" },
+  { "category": "Tools", "name": "Linux" },
+
+  { "category": "Design", "name": "UI Design" },
+  { "category": "Design", "name": "Graphic Design" }
 ]
 
