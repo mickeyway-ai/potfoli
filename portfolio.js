@@ -112,7 +112,11 @@ async function renderProjects() {
                 ["packetTracerFile", "Packet Tracer file"]
             ];
             const evidenceLinks = evidenceItems
-                .map(([key, label]) => ({ url: safeProjectUrl(project[key]), label }))
+                .map(([key, label]) => ({
+                    key,
+                    url: safeProjectUrl(project[key]),
+                    label: key === "diagram" ? project.diagramLabel || label : label
+                }))
                 .filter((item) => item.url);
             if (evidenceLinks.length) {
                 const evidence = document.createElement("div");
@@ -121,7 +125,26 @@ async function renderProjects() {
                 heading.textContent = "Evidence";
                 const links = document.createElement("div");
                 links.className = "evidence-links";
-                evidenceLinks.forEach(({ url, label }) => {
+                evidenceLinks.forEach(({ key, url, label }) => {
+                    if (key === "diagram") {
+                        const button = document.createElement("button");
+                        button.type = "button";
+                        button.className = "diagram-trigger";
+                        button.textContent = label;
+                        button.addEventListener("click", () => {
+                            const dialog = document.querySelector("#diagram-dialog");
+                            const preview = dialog?.querySelector(".diagram-dialog-image");
+                            const caption = dialog?.querySelector(".diagram-dialog-caption");
+                            if (!dialog || !preview || !caption) return;
+                            preview.src = url;
+                            preview.alt = project.imageAlt || `${project.title || "Project"} network diagram`;
+                            caption.textContent = project.title || "Project network diagram";
+                            dialog.showModal();
+                        });
+                        links.append(button);
+                        return;
+                    }
+
                     const link = document.createElement("a");
                     link.href = url;
                     link.textContent = label;
@@ -137,7 +160,24 @@ async function renderProjects() {
             return card;
         });
 
+        const dialog = document.createElement("dialog");
+        dialog.className = "diagram-dialog";
+        dialog.id = "diagram-dialog";
+        dialog.setAttribute("aria-labelledby", "diagram-dialog-title");
+        dialog.innerHTML = `
+            <div class="diagram-dialog-header">
+                <h2 id="diagram-dialog-title">Network diagram</h2>
+                <button class="diagram-dialog-close" type="button" aria-label="Close diagram">&times;</button>
+            </div>
+            <img class="diagram-dialog-image" alt="">
+            <p class="diagram-dialog-caption"></p>
+        `;
+        dialog.querySelector(".diagram-dialog-close").addEventListener("click", () => dialog.close());
+        dialog.addEventListener("click", (event) => {
+            if (event.target === dialog) dialog.close();
+        });
         container.replaceChildren(...cards);
+        container.after(dialog);
     } catch {
         showLoadError(container, "Projects are temporarily unavailable.");
     }
