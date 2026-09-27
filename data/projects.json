@@ -9,6 +9,7 @@
     "image": "images/project1.jpg",
     "imageAlt": "Cisco Packet Tracer smart farming simulation with two sensor-equipped farms",
     "diagram": "images/project1.jpg",
+    "diagramLabel": "View system diagram",
     "demo": "",
     "github": "",
     "packetTracerFile": ""
@@ -23,6 +24,7 @@
     "image": "images/project2.jpg",
     "imageAlt": "Screenshot of the Champagne Jewelry online storefront",
     "diagram": "",
+    "diagramLabel": "View diagram",
     "demo": "",
     "github": "",
     "packetTracerFile": ""
@@ -37,6 +39,7 @@
     "image": "images/project3.jpg",
     "imageAlt": "University campus area network topology with administration, faculty, library, and ICT laboratory areas",
     "diagram": "images/project3.jpg",
+    "diagramLabel": "View network diagram",
     "demo": "",
     "github": "",
     "packetTracerFile": ""
@@ -51,6 +54,7 @@
     "image": "images/Capture.PNG",
     "imageAlt": "Hospital network topology showing separate HR, laboratory, pharmacy, and doctors areas connected to a central router",
     "diagram": "images/Capture.PNG",
+    "diagramLabel": "View network diagram",
     "demo": "",
     "github": "",
     "packetTracerFile": ""
