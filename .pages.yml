@@ -46,6 +46,9 @@ content:
       - name: diagram
         label: Network diagram or evidence image (optional)
         type: image
+      - name: diagramLabel
+        label: Diagram button label (optional)
+        type: string
       - name: packetTracerFile
         label: Packet Tracer file (optional)
         type: file
