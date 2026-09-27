@@ -91,6 +91,12 @@ content:
     path: index.html
     format: code
 
+  - name: cv-page
+    label: CV preview page (HTML)
+    type: file
+    path: cv.html
+    format: code
+
   - name: skills-page
     label: Skills page (HTML)
     type: file
@@ -131,6 +137,12 @@ content:
     label: Main styles (CSS)
     type: file
     path: style.css
+    format: code
+
+  - name: cv-styles
+    label: CV preview styles (CSS)
+    type: file
+    path: cv.css
     format: code
 
   - name: contact-styles
