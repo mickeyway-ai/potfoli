@@ -32,36 +32,108 @@ async function renderProjects() {
 
     try {
         const projects = await loadPortfolioData("data/projects.json");
-        const cards = projects.map((project) => {
-            const card = document.createElement("article");
-            card.className = "card";
+        if (!Array.isArray(projects)) throw new Error("Project data must be a list");
 
+        const splitItems = (value) => String(value || "")
+            .split(/[\n;]/)
+            .map((item) => item.trim())
+            .filter(Boolean);
+
+        const addTextSection = (parent, headingText, text) => {
+            if (!text) return;
+            const section = document.createElement("section");
+            section.className = "case-study-detail";
+            const heading = document.createElement("h4");
+            heading.textContent = headingText;
+            const paragraph = document.createElement("p");
+            paragraph.textContent = text;
+            section.append(heading, paragraph);
+            parent.append(section);
+        };
+
+        const addListSection = (parent, headingText, values, className = "") => {
+            const items = splitItems(values);
+            if (!items.length) return;
+            const section = document.createElement("section");
+            section.className = `case-study-detail ${className}`.trim();
+            const heading = document.createElement("h4");
+            heading.textContent = headingText;
+            const list = document.createElement("ul");
+            items.forEach((value) => {
+                const item = document.createElement("li");
+                item.textContent = value;
+                list.append(item);
+            });
+            section.append(heading, list);
+            parent.append(section);
+        };
+
+        const cards = projects.map((project, index) => {
+            const card = document.createElement("article");
+            card.className = "case-study";
+
+            const media = document.createElement("div");
+            media.className = "case-study-media";
             if (project.image) {
                 const image = document.createElement("img");
                 image.src = project.image;
                 image.alt = project.imageAlt || project.title || "Project image";
                 image.loading = "lazy";
-                card.append(image);
+                image.decoding = "async";
+                media.append(image);
+            } else {
+                media.classList.add("case-study-media-empty");
+                media.setAttribute("aria-hidden", "true");
             }
 
+            const content = document.createElement("div");
+            content.className = "case-study-content";
+            const eyebrow = document.createElement("p");
+            eyebrow.className = "case-study-eyebrow";
+            eyebrow.textContent = `CASE STUDY ${String(index + 1).padStart(2, "0")}`;
             const title = document.createElement("h3");
             title.textContent = project.title || "Untitled project";
-            card.append(title);
+            content.append(eyebrow, title);
 
-            const description = document.createElement("p");
-            description.textContent = project.description || "";
-            card.append(description);
+            const details = document.createElement("div");
+            details.className = "case-study-grid";
+            addTextSection(details, "Problem", project.problem);
+            addTextSection(details, "Solution", project.solution);
+            addListSection(details, "Technologies", project.technologies, "case-study-tags-section");
+            addListSection(details, "What I implemented", project.implemented);
+            content.append(details);
 
-            const projectUrl = safeProjectUrl(project.link);
-            if (projectUrl) {
-                const link = document.createElement("a");
-                link.href = projectUrl;
-                link.textContent = "View project";
-                link.target = "_blank";
-                link.rel = "noopener noreferrer";
-                card.append(link);
+            addTextSection(content, "My role", project.role);
+
+            const evidenceItems = [
+                ["demo", "View demo"],
+                ["github", "GitHub"],
+                ["diagram", "View network diagram"],
+                ["packetTracerFile", "Packet Tracer file"]
+            ];
+            const evidenceLinks = evidenceItems
+                .map(([key, label]) => ({ url: safeProjectUrl(project[key]), label }))
+                .filter((item) => item.url);
+            if (evidenceLinks.length) {
+                const evidence = document.createElement("div");
+                evidence.className = "case-study-evidence";
+                const heading = document.createElement("h4");
+                heading.textContent = "Evidence";
+                const links = document.createElement("div");
+                links.className = "evidence-links";
+                evidenceLinks.forEach(({ url, label }) => {
+                    const link = document.createElement("a");
+                    link.href = url;
+                    link.textContent = label;
+                    link.target = "_blank";
+                    link.rel = "noopener noreferrer";
+                    links.append(link);
+                });
+                evidence.append(heading, links);
+                content.append(evidence);
             }
 
+            card.append(media, content);
             return card;
         });
 
