@@ -77,61 +77,51 @@ async function renderSkills() {
 
     try {
         const skills = await loadPortfolioData("data/skills.json");
-        const skillIcon = (name = "") => {
-            const value = name.toLowerCase();
-            if (value.includes("html")) return "fa-brands fa-html5";
-            if (value.includes("css")) return "fa-brands fa-css3-alt";
-            if (value.includes("network") || value.includes("cisco")) return "fa-solid fa-network-wired";
-            if (value.includes("packet")) return "fa-solid fa-diagram-project";
-            if (value.includes("software") || value.includes("program")) return "fa-solid fa-code";
-            if (value.includes("design")) return "fa-solid fa-pen-ruler";
-            return "fa-solid fa-lightbulb";
+        const categoryIcons = {
+            "web development": "fa-solid fa-code",
+            networking: "fa-solid fa-network-wired",
+            cybersecurity: "fa-solid fa-shield-halved",
+            iot: "fa-solid fa-microchip",
+            tools: "fa-solid fa-screwdriver-wrench",
+            design: "fa-solid fa-pen-ruler"
         };
+        const groups = new Map();
 
-        const items = skills.map((skill) => {
-            const row = document.createElement("div");
-            row.className = "skill";
-
-            const topline = document.createElement("div");
-            topline.className = "skill-topline";
-
-            const icon = document.createElement("span");
-            icon.className = "skill-icon";
-            icon.setAttribute("aria-hidden", "true");
-            const iconGlyph = document.createElement("i");
-            iconGlyph.className = skillIcon(skill.name);
-            icon.append(iconGlyph);
-
-            const name = document.createElement("span");
-            name.className = "skill-name";
-            name.textContent = skill.name || "Skill";
-
-            const level = Math.max(0, Math.min(100, Number(skill.level) || 0));
-            const levelLabel = document.createElement("span");
-            levelLabel.className = "skill-level-label";
-            levelLabel.textContent = `${level}%`;
-            topline.append(icon, name, levelLabel);
-            row.append(topline);
-
-            const bar = document.createElement("div");
-            bar.className = "bar";
-            bar.setAttribute("role", "progressbar");
-            bar.setAttribute("aria-label", skill.name || "Skill level");
-            bar.setAttribute("aria-valuemin", "0");
-            bar.setAttribute("aria-valuemax", "100");
-
-            bar.setAttribute("aria-valuenow", String(level));
-
-            const fill = document.createElement("div");
-            fill.className = "fill";
-            fill.style.setProperty("--skill-level", `${level}%`);
-            bar.append(fill);
-            row.append(bar);
-
-            return row;
+        skills.forEach((skill) => {
+            const category = String(skill.category || "Other").trim() || "Other";
+            const name = String(skill.name || "").trim();
+            if (!name) return;
+            if (!groups.has(category)) groups.set(category, []);
+            groups.get(category).push(name);
         });
 
-        container.replaceChildren(...items);
+        const cards = [...groups].map(([category, names]) => {
+            const card = document.createElement("article");
+            card.className = "skill-category";
+
+            const heading = document.createElement("h2");
+            heading.className = "skill-category-title";
+
+            const icon = document.createElement("i");
+            icon.className = categoryIcons[category.toLowerCase()] || "fa-solid fa-layer-group";
+            icon.setAttribute("aria-hidden", "true");
+            const title = document.createElement("span");
+            title.textContent = category;
+            heading.append(icon, title);
+
+            const list = document.createElement("ul");
+            list.className = "skill-tags";
+            names.forEach((name) => {
+                const item = document.createElement("li");
+                item.textContent = name;
+                list.append(item);
+            });
+
+            card.append(heading, list);
+            return card;
+        });
+
+        container.replaceChildren(...cards);
     } catch {
         showLoadError(container, "Skills are temporarily unavailable.");
     }
