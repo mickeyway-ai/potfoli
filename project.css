@@ -63,6 +63,15 @@ gap:20px;
 .card{
 border-radius:24px;
 }
+
+#projects{
+padding:175px 6% 50px;
+}
+
+#projects .title{
+font-size:34px;
+margin-bottom:32px;
+}
 }
 
 
