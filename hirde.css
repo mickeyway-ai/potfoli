@@ -95,3 +95,10 @@ button[type="submit"]:hover {
 br {
   display: none;
 }
+
+@media (max-width: 600px) {
+  body { padding: 20px 14px; }
+  #contact { width: 100%; padding: 170px 20px 28px; }
+  form { gap: 14px; }
+}
+
